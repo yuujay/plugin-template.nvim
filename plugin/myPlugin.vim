@@ -7,6 +7,15 @@ fun! MyPlugin()
     lua require("testplugin").helloWorld()
 endfun
 
+let g:my_variable = 7
+
 augroup MyPlugin
     autocmd!
 augroup END
+
+" Creating your custom keybinding for the plugin
+nnoremap <Plug>MyPlugin :call MyPlugin()<CR>
+nmap <leader>cc <Plug>MyPlugin
+
+" Creating your own custom vim command
+command Myplugin :call MyPlugin()
